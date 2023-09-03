@@ -12,7 +12,7 @@ This patcher make you able to fully use GunaUI(`Tested on 2.0.4.5`) for free.
 
 ## 🎥 Preview
 
-[![](https://i.imgur.com/isAADUd.gif)](https://i.imgur.com/isAADUd.mp4)
+[Click Here For Video](https://i.imgur.com/isAADUd.mp4)
 ## 🌟 Stars
 
 - None
