@@ -4,6 +4,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/thehelltower/gunapatcher/badge)](https://www.codefactor.io/repository/github/thehelltower/gunapatcher)
 
+### 🤡 Skids
+- [SoheilMV|GunaPatcher](https://github.com/SoheilMV/GunaPatcher) - [Replaced credits, added a bool & modified the basic first if statement]
 ## 📜 What it does ?
 
 This patcher make you able to fully use GunaUI(`Tested on 2.0.4.5`) for free.
