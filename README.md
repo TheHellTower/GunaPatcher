@@ -6,7 +6,11 @@
 
 ## 📜 What it does ?
 
-This patcher make you able to fully use GunaUI(`Tested on 2.0.4.5`) for free.
+This patcher make you able to fully use Guna Products for free.<br>
+Tested on:<br>
+[Guna.UI2.WinForms](https://www.nuget.org/packages/Guna.UI2.WinForms) - `2.0.4.0` - `Latest`(**`2.0.4.6`**)
+<br>
+[Guna.Charts.WinForms](https://www.nuget.org/packages/Guna.Charts.WinForms) - `1.0.5` - `Latest`(**`1.0.9`**)
 
 <br>
 
@@ -59,3 +63,7 @@ This patcher make you able to fully use GunaUI(`Tested on 2.0.4.5`) for free.
 
     Note: Only for questions no code support.
 </details>
+
+# 📢 Credits
+
+- [@SoheilMV](https://github.com/SoheilMV) for Enum Idea

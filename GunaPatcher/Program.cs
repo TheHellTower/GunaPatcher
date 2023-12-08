@@ -1,10 +1,10 @@
 ﻿using dnlib.DotNet;
 using dnlib.DotNet.Emit;
+using GunaPatcher;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
-using OpCodes = dnlib.DotNet.Emit.OpCodes;
 
 namespace GunapPatcher
 {
@@ -12,15 +12,20 @@ namespace GunapPatcher
     {
         private static ModuleDefMD Module = null;
         private static string NewLocation = string.Empty;
+        static string[] ModuleNames = new string[] { "Guna.UI2", "Guna.Charts.WinForms.dll" }, AssemblyNames = new string[] { "Guna.UI2", "Guna.Charts.WinForms" };
+        static Status Status = Status.NotCracked;
         static void Main(string[] args)
         {
             Module = ModuleDefMD.Load(args[0]);
 
             NewLocation = Module.Location.Replace(Module.Name, $"Cracked");
-            
-            if (Module.Name != "Guna.UI2" && Module.Assembly.Name != "Guna.UI2")
+
+            Console.Title = "GunaPatcher | https://t.me/TheHellTower_Group";
+
+            if (!ModuleNames.Contains(Module.Name.ToString()) && !AssemblyNames.Contains(Module.Assembly.Name.ToString()))
             {
-                Console.WriteLine("Are you doing this on purpose ?");
+                Console.WriteLine("Are you doing this on purpose ?\nContact https://t.me/TheHellTower if this is an error.");
+                Process.Start("https://t.me/TheHellTower_Group");
             }
             else
             {
@@ -34,18 +39,29 @@ namespace GunapPatcher
                             Method.Body.ExceptionHandlers.Clear();
 
                             Method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "Cracked by TheHellTower"));
-                            Method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "https://t.me/TheHellTower"));
+                            Method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldstr, "https://t.me/TheHellTower_Group"));
                             Method.Body.Instructions.Add(Instruction.Create(OpCodes.Call, Module.Import(typeof(System.Windows.Forms.MessageBox).GetMethod("Show", new Type[] { typeof(string), typeof(string) }))));
                             Method.Body.Instructions.Add(Instruction.Create(OpCodes.Ret));
 
-                            Console.WriteLine("Cracked !");
+                            Status = Status.Cracked;
                         }
+
+                if (Status == Status.Cracked)
+                {
+                    Console.WriteLine("Cracked with success !");
+                    if (!Directory.Exists(NewLocation))
+                        Directory.CreateDirectory(NewLocation);
+
+
+                    Module.Write($"{NewLocation}\\{Module.Name}");
+                } else
+                {
+                    Console.WriteLine("Unfortunately, this version is not supported..\n\nContact https://t.me/TheHellTower for the patcher to get updated !");
+                    Process.Start("https://t.me/TheHellTower_Group");
+                }
             }
 
-            if (!Directory.Exists(NewLocation))
-                Directory.CreateDirectory(NewLocation);
-
-            Module.Write($"{NewLocation}\\{Module.Name}");
+            Console.ReadLine();
         }
     }
 }
