@@ -52,7 +52,6 @@ namespace GunapPatcher
                     if (!Directory.Exists(NewLocation))
                         Directory.CreateDirectory(NewLocation);
 
-
                     Module.Write($"{NewLocation}\\{Module.Name}");
                 } else
                 {
