@@ -1,12 +1,11 @@
 ﻿using dnlib.DotNet;
 using dnlib.DotNet.Emit;
-using GunaPatcher;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace GunapPatcher
+namespace GunaPatcher
 {
     class Program
     {
