@@ -64,6 +64,6 @@ Tested on:<br>
     Note: Only for questions no code support.
 </details>
 
-# 📢 Credits
+## 📢 Credits
 
 - [@SoheilMV](https://github.com/SoheilMV) for Enum Idea
