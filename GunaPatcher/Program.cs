@@ -52,7 +52,8 @@ namespace GunaPatcher
                         Directory.CreateDirectory(NewLocation);
 
                     Module.Write($"{NewLocation}\\{Module.Name}");
-                } else
+                }
+                else
                 {
                     Console.WriteLine("Unfortunately, this version is not supported..\n\nContact https://t.me/TheHellTower for the patcher to get updated !");
                     Process.Start("https://t.me/TheHellTower_Group");
